@@ -66,7 +66,7 @@ import plotly.express as px
 fig = px.line(df, x='x', y='y', title='My Chart')
 
 # Display
-st.plotly_chart(fig, width='stretch')
+st.plotly_chart(fig, use_container_width=True)
         """, language="python")
         
         st.info("**Features:** Zoom, pan, hover tooltips, export, animations")
@@ -193,7 +193,7 @@ with tab2:
         fig.update_traces(line_color='#1f77b4', line_width=2)
         fig.update_layout(hovermode='x unified')
         
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
     
     with col2:
         # Sales by region
@@ -210,7 +210,7 @@ with tab2:
             color_continuous_scale='Blues'
         )
         
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
     
     # Second row
     col1, col2 = st.columns(2)
@@ -229,7 +229,7 @@ with tab2:
             hole=0.4
         )
         
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
     
     with col2:
         # Sales vs Customers scatter
@@ -245,13 +245,13 @@ with tab2:
             trendline='ols'
         )
         
-        st.plotly_chart(fig, width='stretch')
+        st.plotly_chart(fig, use_container_width=True)
     
     # Detailed data table
     with st.expander("📋 View Detailed Data"):
         st.dataframe(
             filtered_df.head(100),
-            width='stretch'
+            use_container_width=True
         )
 
 # ============ TAB 3: CHART GALLERY ============
@@ -359,7 +359,7 @@ with tab3:
             color_continuous_scale='RdBu'
         )
     
-    st.plotly_chart(fig, width='stretch')
+    st.plotly_chart(fig, use_container_width=True)
     
     # Show code
     with st.expander("📝 View Code"):
@@ -367,7 +367,7 @@ with tab3:
 import plotly.express as px
 
 fig = px.{chart_type.lower().replace(' ', '_')}(...)
-st.plotly_chart(fig, width='stretch')
+st.plotly_chart(fig, use_container_width=True)
         """, language="python")
 
 # ============ TAB 4: QUIZ ============

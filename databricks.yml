@@ -1,0 +1,9 @@
+name: test-app
+compute:
+  size: MEDIUM
+environment:
+  python_version: "3.11"
+command:
+  - "streamlit"
+  - "run"
+  - "app.py"
